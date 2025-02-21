@@ -1,0 +1,14 @@
+<h2>Crear pájaro</h2>
+<form action="/characters" method="post">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="species">Especie</label>
+    <select name="species" id="species" required>
+        <option value="duck">Pato</option>
+        <option value="parrot">Loro</option>
+        <option value="pigeon">Paloma</option>
+        <option value="seagull">Gaviota</option>
+    </select>
+    <input type="hidden" id="owner" name="owner" value="<%= username %>">
+    <button type="submit">Crear</button>
+</form>

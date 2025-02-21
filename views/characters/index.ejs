@@ -1,0 +1,24 @@
+<% if (characters.length != 0) { %>
+<h2>Mis pájaros</h2>
+<ul>
+    <% characters.forEach(character => { %>
+        <% if (character.owner === username) { %>
+            <article style="display: flex; flex-direction: column; align-items: center;">
+                <div class="sprite <%= character.species %>"></div>
+                <b><%= character.name %></b><br>
+                <form action="/game/select" method="post" style="display:inline;">
+                    <input type="hidden" name="characterId" value="<%= character.id %>">
+                    <button type="submit">✅ Seleccionar</button>
+                </form>
+                <a class="button" href="/characters/<%= character.id %>/edit">✏️ Editar</a>
+                <form action="/characters/<%= character.id %>/delete" method="post" style="display:inline;">
+                    <button type="submit">🗑️ Eliminar</button>
+                </form><br>
+            </article>
+        <% } %>
+    <% }); %>
+</ul>
+<% } else { %>
+    <p>Aún no tienes pájaros.</p>
+<% } %>
+<a class="button" href="/characters/new">➕ Crear pájaro</a>

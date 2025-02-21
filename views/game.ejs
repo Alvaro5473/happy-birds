@@ -1,0 +1,7 @@
+<% if (character) { %>
+    <div class="sprite <%= character.species %>"></div>
+    <h2><%= character.name %></h2>
+<% } else { %>
+    <p>No hay ningún pájaro seleccionado.</p>
+    <a class="button" href="/characters">Seleccionar pájaro</a>
+<% } %>

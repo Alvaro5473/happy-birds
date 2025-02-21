@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birds</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="/styles/sprites.css">
+</head>
+<body>
+    <header>
+        <h1>Happy Birds</h1>
+        <% if (username) { %>
+            <p>¡Hola, <%= username %>!</p>
+        <% } %>
+            <nav>
+                <% if (username === "admin") { %>
+                    <a href="/admin">⚙️ Panel de administrador</a>
+                <% } %>
+                <a href="/game">🏠 Inicio</a>
+                <a href="/characters">🐦 Pájaros</a>
+                <a href="/users">👤 Usuarios</a>
+                <% if (!username) { %>
+                    <a href="/login">🚪 Iniciar sesión</a>
+                <% } else { %>
+                    <a href="/logout">❌ Cerrar sesión</a>
+                <% } %>
+            </nav>
+    </header>
+    <%- body %>
+    <!--footer>
+        Happy Birds was created by Álvaro Rivas.<br>
+        This project is licensed under the MIT license © 2024.
+    </footer-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+.sprite {
+    width: 200px;
+    height: 200px;
+    background-size: 100% 200%; /* Distribuye la spritesheet en 2 filas */
+    animation: play-sprite 0.5s steps(2) infinite; /* Animación de 1 segundo, con 2 pasos (frames) */
+}
+
+@keyframes play-sprite {
+    from { background-position: 0 0; } /* Primer frame */
+    to { background-position: 0 -200%; } /* Segundo frame */
+}
+
+.pigeon {
+    background-image: url('../assets/pigeon.png');
+}
+
+.parrot {
+    background-image: url('../assets/parrot.png');
+}
+
+.seagull {
+    background-image: url('../assets/seagull.png');
+}
+
+.duck {
+    background-image: url('../assets/duck.png');
+}

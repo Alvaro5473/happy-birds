@@ -1,0 +1,18 @@
+<% if (users.length > 1) { %>
+    <h2>Panel de administrador</h2>
+    <ul>
+        <% users.forEach(user => { %>
+            <% if (user.name !== "admin") { %>
+                <article>
+                    <b><%= user.name %></b><br>
+                    <a class="button" href="/users/<%= user.id %>/edit">✏️ Editar</a>
+                    <form action="/users/<%= user.id %>/delete" method="post" style="display:inline;">
+                        <button type="submit">🗑️ Eliminar</button>
+                    </form>
+                </article>
+            <% } %>
+        <% }); %>
+    </ul>
+<% } else { %>
+    <p>No hay usuarios.</p>
+<% } %>

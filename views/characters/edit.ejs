@@ -1,0 +1,6 @@
+<h1>Editar pájaro</h1>
+<form action="/characters/<%= character.id %>/update" method="post">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name" value="<%= character.name %>" required><br>
+    <button type="submit">Actualizar</button>
+</form>
